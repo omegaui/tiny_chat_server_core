@@ -26,7 +26,7 @@ and `uniqueID`.
 ## Launching 
 Simply launch `internal/server.dart` to start the server.
 
-And later on for connections create instances of `client.dart`:
+And later on for connections create instances of `Client` from `client.dart`:
 ```dart
 
 import '../bin/data/user.dart';
