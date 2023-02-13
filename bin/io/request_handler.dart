@@ -12,8 +12,13 @@ class RequestHandler {
       return false;
     }
     var whiteList = configuration['allowed-users-list'];
+    var blockList = configuration['blocked-users-list'];
     if (whiteList.isEmpty) {
-      return user.serverCode == configuration['server-code'];
+      var blocked = false;
+      if(blockList.isNotEmpty){
+        blocked = blockList.contains(user.uniqueID);
+      }
+      return !blocked && user.serverCode == configuration['server-code'];
     }
     return whiteList.contains(user.uniqueID) &&
         user.serverCode == configuration['server-code'];

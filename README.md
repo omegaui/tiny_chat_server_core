@@ -17,10 +17,10 @@ and `uniqueID`.
 }
 ```
 
-### To be implemented:
+### Implementations:
 
-- [ ] Remote Connections 
-- [ ] Blocking Users
+- [x] Remote Connections
+- [x] Blocking Users
 - [ ] Sending Files and other Codes
 
 ## Launching 
