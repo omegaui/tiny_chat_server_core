@@ -13,8 +13,9 @@ class ConnectionManager {
     connections.where((conn) => conn.session != connection.session).forEach(
         (conn) => conn.session.send(
             "${PrintColor.blue("[JOINED]")} >>>> ${connection.user.uniqueID}"));
-    connection.session.send("Successfully Joined Server ${PrintColor.blue(configuration['name'])} owned by ${PrintColor.magenta(configuration['owner-id'])}");
-    if(configuration['push-previous-messages-to-new-users']) {
+    connection.session.send(
+        "Successfully Joined Server ${PrintColor.blue(configuration['name'])} owned by ${PrintColor.magenta(configuration['owner-id'])}");
+    if (configuration['push-previous-messages-to-new-users']) {
       for (var message in messages) {
         connection.session.send(message);
       }
@@ -30,8 +31,9 @@ class ConnectionManager {
 
   void message(WebSocketSession session, dynamic data) {
     messages.add(data);
-    connections.where((conn) => conn.session != session).forEach(
-        (conn) => conn.session.send(data));
+    connections
+        .where((conn) => conn.session != session)
+        .forEach((conn) => conn.session.send(data));
   }
 
   void add(Connection connection) {

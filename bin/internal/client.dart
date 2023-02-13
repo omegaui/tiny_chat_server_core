@@ -1,11 +1,10 @@
-
 import 'package:colored_print/colored_print.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 import '../data/user.dart';
 import 'connection.dart';
 
-class Client{
+class Client {
   late WebSocketChannel channel;
   String hostAddress;
   User user;
@@ -17,7 +16,7 @@ class Client{
     });
   }
 
-  void send(String message){
+  void send(String message) {
     channel.sink.add("[${PrintColor.blue(user.uniqueID)}] >>>> $message");
   }
 }

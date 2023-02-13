@@ -7,25 +7,25 @@ class RequestHandler {
   List<User> users = [];
 
   bool accept(User user) {
-    if(alreadyLoggedIn(user)){
-      ColoredPrint.warning("Duplicate Join Request from user id ${user.uniqueID}");
+    if (alreadyLoggedIn(user)) {
+      ColoredPrint.warning(
+          "Duplicate Join Request from user id ${user.uniqueID}");
       return false;
     }
     var whiteList = configuration['allowed-users-list'];
     var blockList = configuration['blocked-users-list'];
     if (whiteList.isEmpty) {
       var blocked = false;
-      if(blockList.isNotEmpty){
+      if (blockList.isNotEmpty) {
         blocked = blockList.contains(user.uniqueID);
       }
       return !blocked && user.serverCode == configuration['server-code'];
     }
     return whiteList.contains(user.uniqueID) &&
         user.serverCode == configuration['server-code'];
-
   }
 
-  bool alreadyLoggedIn(User user){
+  bool alreadyLoggedIn(User user) {
     return users.where((userX) => userX.uniqueID == user.uniqueID).isNotEmpty;
   }
 

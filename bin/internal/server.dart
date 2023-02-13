@@ -1,4 +1,3 @@
-
 import 'package:colored_print/colored_print.dart';
 
 import '../data/user.dart';
@@ -14,22 +13,23 @@ RequestHandler requestHandler = RequestHandler.instance;
 ConnectionManager connectionManager = ConnectionManager();
 
 void main(List<String?> args) {
-  if(args.isNotEmpty) {
+  if (args.isNotEmpty) {
     serverConfigPath = args.first ?? "server-config.json";
   }
   loadConfig();
   try {
-    shelfRun(init, defaultBindAddress: configuration['host-address'], defaultBindPort: configuration['hosting-port']);
-  }
-  catch(e){
-    ColoredPrint.error("An Internal Error has occurred and the Server cannot be started!");
+    shelfRun(init,
+        defaultBindAddress: configuration['host-address'],
+        defaultBindPort: configuration['hosting-port']);
+  } catch (e) {
+    ColoredPrint.error(
+        "An Internal Error has occurred and the Server cannot be started!");
     ColoredPrint.error("Report the following log to fix this issue.");
     rethrow;
   }
 }
 
 Handler init() {
-
   ColoredPrint.log(
     "Starting Server ... ${configuration['name']}",
     tag: "INIT",
@@ -56,8 +56,7 @@ Handler init() {
         tagColor: PrintColor.cyan,
       );
       return session;
-    }
-    else{
+    } else {
       ColoredPrint.warning('Refused connection request from ${user.uniqueID}');
       print(requestHandler.refuseConnection(user));
       return "CONNECTION REFUSED";

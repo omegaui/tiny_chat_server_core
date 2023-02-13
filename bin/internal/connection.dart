@@ -1,6 +1,4 @@
 
-import 'dart:convert';
-
 import 'package:shelf_plus/shelf_plus.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
@@ -18,8 +16,7 @@ class Connection {
   }
 }
 
-WebSocketChannel connect(String hostAddress, User user){
-  return WebSocketChannel.connect(Uri.parse("ws://$hostAddress/connect/${user.toString()}"));
+WebSocketChannel connect(String hostAddress, User user) {
+  return WebSocketChannel.connect(
+      Uri.parse("ws://$hostAddress/connect/${user.toString()}"));
 }
-
-
