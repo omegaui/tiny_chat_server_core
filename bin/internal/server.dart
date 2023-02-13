@@ -57,7 +57,7 @@ Handler init() {
       );
       return session;
     } else {
-      ColoredPrint.warning('Refused connection request from ${user.uniqueID}');
+      ColoredPrint.warning('Refused connection request from ${PrintColor.red(user.uniqueID)}');
       print(requestHandler.refuseConnection(user));
       return "CONNECTION REFUSED";
     }

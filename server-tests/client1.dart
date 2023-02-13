@@ -4,7 +4,7 @@ import '../bin/internal/client.dart';
 
 void main(){
   var host = "192.168.190.151:8080";
-  var c1 = Client(host, User(uniqueID: 'omegaui', serverCode: "devs"));
+  var c1 = Client(host, User(uniqueID: 'omegaui', serverCode: "dzevs"));
   c1.send("hello");
   c1.send("What are you doing?");
 }

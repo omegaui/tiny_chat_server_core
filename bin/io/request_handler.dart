@@ -36,7 +36,7 @@ class RequestHandler {
 
   String refuseConnection(User user) {
     return PrintColor.red(
-        "[REASON] >>>> ${user.serverCode != configuration['server-code'] ? 'INVALID SERVER CODE.' : 'USER NOT ALLOWED.'}${isLimitReached() ? ", Server Full!" : ""}");
+        "[REASON] ${user.serverCode != configuration['server-code'] ? 'INVALID SERVER CODE.' : 'USER NOT ALLOWED.'}${isLimitReached() ? ", Server Full!" : ""}");
   }
 
   static get instance {

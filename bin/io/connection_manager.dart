@@ -14,7 +14,7 @@ class ConnectionManager {
         (conn) => conn.session.send(
             "${PrintColor.blue("[JOINED]")} >>>> ${connection.user.uniqueID}"));
     connection.session.send(
-        "Successfully Joined Server ${PrintColor.blue(configuration['name'])} owned by ${PrintColor.magenta(configuration['owner-id'])}");
+        "Successfully Joined Server ${PrintColor.blue(configuration['name'])} owned by ${PrintColor.cyan(configuration['owner-id'])}");
     if (configuration['push-previous-messages-to-new-users']) {
       for (var message in messages) {
         connection.session.send(message);
