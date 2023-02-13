@@ -19,12 +19,12 @@ void main(List<String?> args) {
   }
   loadConfig();
   try {
-    shelfRun(init, defaultBindAddress: configuration['host-address']);
+    shelfRun(init, defaultBindAddress: configuration['host-address'], defaultBindPort: configuration['hosting-port']);
   }
   catch(e){
     ColoredPrint.error("An Internal Error has occurred and the Server cannot be started!");
     ColoredPrint.error("Report the following log to fix this issue.");
-    print(e);
+    rethrow;
   }
 }
 

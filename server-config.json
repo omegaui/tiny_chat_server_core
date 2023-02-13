@@ -1,10 +1,11 @@
 {
   "name": "\uD83D\uDE0E rock-n-roll \uD83D\uDE0E",
   "host-address": "192.168.190.151",
+  "hosting-port": 8080,
   "owner-id": "@omegaui",
   "connections-limit": 10,
-  "allowed-users-list": ["xyz", "pqr"],
-  "blocked-users-list": ["abc"],
+  "allowed-users-list": [],
+  "blocked-users-list": [],
   "push-previous-messages-to-new-users": true,
   "server-code": "devs"
 }
