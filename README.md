@@ -9,9 +9,11 @@ and `uniqueID`.
 ```json
 {
   "name": "\uD83D\uDE0E rock-n-roll \uD83D\uDE0E",
+  "host-address": "192.168.190.151",
   "owner-id": "@omegaui",
-  "connections-limit": 10,
-  "allowed-users-list": [],
+  "connections-limit": 10, // -1 for unlimited users
+  "allowed-users-list": ["xyz", "pqr"],
+  "blocked-users-list": ["abc"],
   "push-previous-messages-to-new-users": true,
   "server-code": "devs"
 }

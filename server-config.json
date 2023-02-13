@@ -3,8 +3,8 @@
   "host-address": "192.168.190.151",
   "owner-id": "@omegaui",
   "connections-limit": 10,
-  "allowed-users-list": [],
-  "blocked-users-list": [],
+  "allowed-users-list": ["xyz", "pqr"],
+  "blocked-users-list": ["abc"],
   "push-previous-messages-to-new-users": true,
   "server-code": "devs"
 }
