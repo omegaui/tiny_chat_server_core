@@ -1,0 +1,8 @@
+{
+  "name": "\uD83D\uDE0E rock-n-roll \uD83D\uDE0E",
+  "owner-id": "@omegaui",
+  "connections-limit": 10,
+  "allowed-users-list": [],
+  "push-previous-messages-to-new-users": true,
+  "server-code": "devs"
+}
