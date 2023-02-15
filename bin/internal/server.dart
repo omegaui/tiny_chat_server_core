@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:colored_print/colored_print.dart';
 
 import '../data/user.dart';
@@ -62,6 +64,15 @@ Handler init() {
       return "CONNECTION REFUSED";
     }
   });
+
+  // description
+  router.get('/description', () => {'description': configuration['description']});
+
+  // icon
+  router.get('/icon.png', () => File(configuration['icon']).openRead());
+
+  // owner
+  router.get('/owner', () => {'owner': configuration['owner-id']});
 
   ColoredPrint.success("Server Started!");
 

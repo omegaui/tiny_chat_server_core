@@ -1,8 +1,10 @@
 {
   "name": "\uD83D\uDE0E rock-n-roll \uD83D\uDE0E",
-  "host-address": "192.168.190.151",
+  "description": "simple server",
+  "icon": "/home/omegaui/Downloads/dash-assets/icons8-paper-plane-48.png",
+  "host-address": "127.0.0.1",
   "hosting-port": 8080,
-  "owner-id": "@omegaui",
+  "owner-id": "omegaui",
   "connections-limit": 10,
   "allowed-users-list": [],
   "blocked-users-list": [],
